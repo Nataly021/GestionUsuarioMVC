@@ -1,0 +1,96 @@
+<!-- Created with Jaspersoft Studio version 7.0.8.final using JasperReports Library version 7.0.8-6f896111  -->
+<jasperReport name="ReporteEmpleado" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cfa7dfc5-5344-4f36-8248-dd9978c54a12">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="EmpresaDB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<query language="sql"><![CDATA[
+SELECT
+    IdEmpleado,
+    Nombre,
+    Apellido,
+    Cargo,
+    Salario,
+    Departamento
+FROM dbo.Empleados;
+]]></query>
+	<field name="IdEmpleado" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="IdEmpleado"/>
+		<property name="com.jaspersoft.studio.field.label" value="IdEmpleado"/>
+	</field>
+	<field name="Nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="Nombre"/>
+	</field>
+	<field name="Apellido" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Apellido"/>
+		<property name="com.jaspersoft.studio.field.label" value="Apellido"/>
+	</field>
+	<field name="Cargo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Cargo"/>
+		<property name="com.jaspersoft.studio.field.label" value="Cargo"/>
+	</field>
+	<field name="Salario" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Salario"/>
+		<property name="com.jaspersoft.studio.field.label" value="Salario"/>
+	</field>
+	<field name="Departamento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Departamento"/>
+		<property name="com.jaspersoft.studio.field.label" value="Departamento"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="02c74c93-7ae3-4676-9ddf-b3a12b4701b1" x="110" y="50" width="199" height="19" fontSize="12.0" bold="true">
+			<text><![CDATA[Reporte general de empleados]]></text>
+		</element>
+	</title>
+	<pageHeader height="61" splitType="Stretch"/>
+	<columnHeader height="68" splitType="Stretch">
+		<element kind="staticText" uuid="eedd2a3f-c3c8-447d-b5c9-7d0dc04cd757" x="0" y="10" width="30" height="30">
+			<text><![CDATA[ID]]></text>
+		</element>
+		<element kind="staticText" uuid="c4cc0e7a-94d7-49b4-84e8-0df25d91c798" x="90" y="10" width="40" height="30">
+			<text><![CDATA[Nombre]]></text>
+		</element>
+		<element kind="staticText" uuid="5ede1625-16f7-4f45-8c3f-809360df3d68" x="240" y="10" width="50" height="30">
+			<text><![CDATA[Cargo]]></text>
+		</element>
+		<element kind="staticText" uuid="fcf44680-6a02-4392-a1e7-648de83149d1" x="165" y="9" width="50" height="30">
+			<text><![CDATA[Apellido]]></text>
+		</element>
+		<element kind="staticText" uuid="81683e92-9319-4072-bf9d-bd2660c4011a" x="309" y="10" width="40" height="30">
+			<text><![CDATA[Salario]]></text>
+		</element>
+		<element kind="staticText" uuid="fd29b0cc-cc5d-496e-9bdd-2025f6ab94bd" x="380" y="10" width="80" height="30">
+			<text><![CDATA[Departamento]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<element kind="textField" uuid="d88ba6c6-b46b-4575-b5e5-06e55a5bb619" x="0" y="10" width="80" height="30">
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9604542b-9017-44c1-9bbf-630401610051"/>
+				<expression><![CDATA[$F{IdEmpleado}]]></expression>
+			</element>
+			<element kind="textField" uuid="9f4ad373-0751-4976-9bbb-87a0013fb2e7" x="90" y="10" width="67" height="30">
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d852f73f-f883-4113-a058-75c15c0c1633"/>
+				<expression><![CDATA[$F{Nombre}]]></expression>
+			</element>
+			<element kind="textField" uuid="7f215f26-1f90-407c-b4c0-8e4f8fb8558b" x="165" y="10" width="64" height="30">
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb2bf9e8-ff3e-45c4-8cbc-336cd6d4ddc9"/>
+				<expression><![CDATA[$F{Apellido}]]></expression>
+			</element>
+			<element kind="textField" uuid="72a4da4c-c9fa-4a44-9a81-5c12916ebfed" x="240" y="12" width="60" height="30">
+				<expression><![CDATA[$F{Cargo}]]></expression>
+			</element>
+			<element kind="textField" uuid="883c0df1-e2b6-4542-bd22-aa3008123fba" x="309" y="12" width="60" height="30">
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dbb4bb86-84b3-4611-82c2-f85f20c8f756"/>
+				<expression><![CDATA[$F{Salario}]]></expression>
+			</element>
+			<element kind="textField" uuid="40713834-2f50-44ed-8145-e6e3600bdad5" x="380" y="10" width="100" height="30">
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="33787f24-d228-4cff-92c3-8776dcb04547"/>
+				<expression><![CDATA[$F{Departamento}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
